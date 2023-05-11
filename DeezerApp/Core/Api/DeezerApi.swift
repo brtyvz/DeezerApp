@@ -11,8 +11,8 @@ import UIKit
 
 enum DeezerAPI {
     case genre
-    case artist(id: Int)
-    case album(id: Int)
+    case artist(id: Int?)
+    case album(id: Int?)
     
     
     var url: URL? {
