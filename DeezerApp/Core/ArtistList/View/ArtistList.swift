@@ -19,7 +19,7 @@ struct ArtistList: View {
                         ForEach(vm.artists,id:\.artistId) { artist in
                             
                             NavigationLink {
-                               
+                                ArtistInfoView(artist: artist)
                               
                             } label: {
                                 ArtistCellView(artist: artist, viewModel: vm)
@@ -27,7 +27,8 @@ struct ArtistList: View {
                         }
                     }
                 }.onAppear{
-                    vm.fetchArtistList(id:id )
+                    vm.fetchArtistList(id:id)
+                   
                 }
                 .navigationTitle("Artists")
         }

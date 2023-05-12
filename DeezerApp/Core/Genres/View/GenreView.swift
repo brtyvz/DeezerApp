@@ -19,7 +19,7 @@ struct GenreView: View {
                     ForEach(vm.genres,id:\.genreId) { genre in
                         
                         NavigationLink {
-                            ArtistList(vm: vm,id: genre.genreId)
+                            ArtistList(id: genre.genreId)
                           
                         } label: {
                             GenreCellView(genre: genre, viewModel: vm)
@@ -28,6 +28,7 @@ struct GenreView: View {
                 }
             }.onAppear{
                 vm.fetchGenre()
+              
             }
             .navigationTitle("Genres")
         }

@@ -12,6 +12,8 @@ class MusicCategoryViewModel:ObservableObject {
     @Published var genres : [MusicGenreModel] = []
     @Published var error : Error?
     @Published var artists : [ArtistModel] = []
+    @Published var albums : [AlbumModel] = []
+    @Published var musics : [MusicModel] = []
     
     private let session: URLSession = URLSession(configuration: URLSessionConfiguration.default)
 
@@ -46,39 +48,55 @@ class MusicCategoryViewModel:ObservableObject {
     }
     
     
-//    func fetchArtists(id:Int){
-//        let url = DeezerAPI.artist(id: id).url!
-//        let request = URLRequest(url: url)
-//        let task = session.dataTask(with: request) { data, response, error in
-//            let result = self.processArtistRequest(artistID: id, data: data, error: error)
-//            switch result {
-//            case let .success(artist):
-//                OperationQueue.main.addOperation {
-//                    
-//
-//                }
-//            case let .failure(error):
-//                self.error = error
-//            }
-//        }
-//        task.resume()
-//    }
+    func fetchArtistsİnfo(id:Int){
+        let url = URL(string: "https://api.deezer.com/artist/\(id)/albums")!
+        let request = URLRequest(url: url)
+        let task = session.dataTask(with: request) { data, response, error in
+            let result = self.processArtistInfoRequest(artistID: id, data: data, error: error)
+            switch result {
+            case let .success(albums):
+                OperationQueue.main.addOperation {
+                    self.albums = albums
+                }
+            case let .failure(error):
+                OperationQueue.main.addOperation {
+                    self.error = error
+                    
+                }
+            }
+           
+        }
+        task.resume()
+    }
     
-    private func processArtistRequest(artistID:Int,data:Data?,error:Error?) ->
+    private func processArtistRequest(genreID:Int,data:Data?,error:Error?) ->
     Result<[ArtistModel],Error> {
         guard let jsonData = data else {
             return .failure(error!)
             
         }
-        let result = DownloaderClient.artists(artistID:artistID,fromJSON: jsonData)
+        let result = DownloaderClient.artistList(genreID:genreID,fromJSON: jsonData)
         return result
     }
+    
+    //Album
+    private func processArtistInfoRequest(artistID:Int,data:Data?,error:Error?) ->
+    Result<[AlbumModel],Error> {
+        guard let jsonData = data else {
+            return .failure(error!)
+            
+        }
+        let result = DownloaderClient.albumInfo(artistID: artistID, fromJSON: jsonData)
+        return result
+    }
+    
+    
     
     func fetchArtistList(id:Int){
         let url = URL(string: "https://api.deezer.com/genre/\(id)/artists")!
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request) { data, response, error in
-            let result = self.processArtistRequest(artistID: id, data: data, error: error)
+            let result = self.processArtistRequest(genreID: id, data: data, error: error)
             switch result {
             case let .success(artist):
                 OperationQueue.main.addOperation {
@@ -88,8 +106,43 @@ class MusicCategoryViewModel:ObservableObject {
             case let .failure(error):
                 self.error = error
             }
+            
         }
         task.resume()
+    }
+    
+    
+    
+    //MUsic
+    func fetchMusicInfo(id:Int){
+        let url = URL(string: "https://api.deezer.com/album/\(id)/tracks")!
+        let request = URLRequest(url: url)
+        let task = session.dataTask(with: request) { data, response, error in
+            let result = self.processMusicInfoRequest(albumID: id, data: data, error: error)
+            switch result {
+            case let .success(musics):
+                OperationQueue.main.addOperation {
+                    self.musics = musics
+
+                }
+            case let .failure(error):
+                OperationQueue.main.addOperation {
+                self.error = error
+                }
+            }
+            
+        }
+        task.resume()
+    }
+    
+    private func processMusicInfoRequest(albumID:Int,data:Data?,error:Error?) ->
+    Result<[MusicModel],Error> {
+        guard let jsonData = data else {
+            return .failure(error!)
+            
+        }
+        let result = DownloaderClient.musicInfo(albumID: albumID, fromJSON: jsonData)
+        return result
     }
     
     

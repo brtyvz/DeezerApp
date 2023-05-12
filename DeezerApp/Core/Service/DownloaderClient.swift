@@ -19,15 +19,28 @@ public class DownloaderClient  {
         }
     }
     
-    static func artists (artistID:Int,fromJSON data:Data)  -> Result<[ArtistModel],Error> {
+    static func albumInfo (artistID:Int,fromJSON data:Data)  -> Result<[AlbumModel],Error> {
         do {
             let decoder = JSONDecoder()
-            let artistResponse = try decoder.decode(ArtistResponse.self, from: data)
-            return .success(artistResponse.data)
+            let albumResponse = try decoder.decode(AlbumResponse.self, from: data)
+            return .success(albumResponse.data)
         } catch  {
             return.failure(error)
         }
     }
+    
+    static func musicInfo (albumID:Int,fromJSON data:Data)  -> Result<[MusicModel],Error> {
+        do {
+            let decoder = JSONDecoder()
+            let musicResponse = try decoder.decode(MusicResponse.self, from: data)
+            return .success(musicResponse.data)
+        } catch  {
+            return.failure(error)
+        }
+    }
+
+    
+    
     
     static func artistList (genreID:Int,fromJSON data:Data)  -> Result<[ArtistModel],Error> {
         do {

@@ -10,6 +10,7 @@ class ArtistModel: Codable {
     var artistId: Int
     var artistName: String
     var artistImageUrl: String
+
     
     private enum CodingKeys: String, CodingKey {
          case artistId = "id"

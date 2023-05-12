@@ -17,6 +17,11 @@
 		5B121F3E2A0C590E00D17637 /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B121F3D2A0C590E00D17637 /* ArtistModel.swift */; };
 		5B121F412A0D02EF00D17637 /* ArtistList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B121F402A0D02EF00D17637 /* ArtistList.swift */; };
 		5B121F432A0D1AFC00D17637 /* ArtistCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B121F422A0D1AFC00D17637 /* ArtistCellView.swift */; };
+		5B121F462A0D47F900D17637 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B121F452A0D47F900D17637 /* AlbumModel.swift */; };
+		5B121F492A0D56A800D17637 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B121F482A0D56A800D17637 /* AlbumView.swift */; };
+		5B121F4E2A0D724300D17637 /* ArtistInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B121F4D2A0D724300D17637 /* ArtistInfoView.swift */; };
+		5B121F522A0E2F7200D17637 /* AlbumCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B121F512A0E2F7200D17637 /* AlbumCellView.swift */; };
+		5B4465F52A0ED92F002B7D5D /* MusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4465F42A0ED92F002B7D5D /* MusicModel.swift */; };
 		5B5F654A2A09A304000693FD /* DeezerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5F65492A09A304000693FD /* DeezerAppApp.swift */; };
 		5B5F654C2A09A304000693FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5F654B2A09A304000693FD /* ContentView.swift */; };
 		5B5F654E2A09A307000693FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5F654D2A09A307000693FD /* Assets.xcassets */; };
@@ -35,6 +40,11 @@
 		5B121F3D2A0C590E00D17637 /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
 		5B121F402A0D02EF00D17637 /* ArtistList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistList.swift; sourceTree = "<group>"; };
 		5B121F422A0D1AFC00D17637 /* ArtistCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCellView.swift; sourceTree = "<group>"; };
+		5B121F452A0D47F900D17637 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		5B121F482A0D56A800D17637 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
+		5B121F4D2A0D724300D17637 /* ArtistInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistInfoView.swift; sourceTree = "<group>"; };
+		5B121F512A0E2F7200D17637 /* AlbumCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellView.swift; sourceTree = "<group>"; };
+		5B4465F42A0ED92F002B7D5D /* MusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
 		5B5F65462A09A304000693FD /* DeezerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeezerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5F65492A09A304000693FD /* DeezerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeezerAppApp.swift; sourceTree = "<group>"; };
 		5B5F654B2A09A304000693FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,11 +69,12 @@
 		5B121F1E2A0A464D00D17637 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5B121F4A2A0D720B00D17637 /* ArtistInfo */,
 				5B121F3B2A0C538900D17637 /* Api */,
 				5B121F2D2A0B9DC200D17637 /* Service */,
 				5B121F222A0A467C00D17637 /* Favs */,
 				5B121F212A0A466F00D17637 /* Album */,
-				5B121F202A0A466500D17637 /* Artist */,
+				5B121F202A0A466500D17637 /* ArtistList */,
 				5B121F1F2A0A465300D17637 /* Genres */,
 			);
 			path = Core;
@@ -79,18 +90,21 @@
 			path = Genres;
 			sourceTree = "<group>";
 		};
-		5B121F202A0A466500D17637 /* Artist */ = {
+		5B121F202A0A466500D17637 /* ArtistList */ = {
 			isa = PBXGroup;
 			children = (
 				5B121F3F2A0CF01300D17637 /* View */,
 				5B121F3C2A0C58E900D17637 /* Model */,
 			);
-			path = Artist;
+			path = ArtistList;
 			sourceTree = "<group>";
 		};
 		5B121F212A0A466F00D17637 /* Album */ = {
 			isa = PBXGroup;
 			children = (
+				5B4465F32A0ED91F002B7D5D /* Music */,
+				5B121F472A0D569800D17637 /* View */,
+				5B121F442A0D47D900D17637 /* AlbumModel */,
 			);
 			path = Album;
 			sourceTree = "<group>";
@@ -158,6 +172,47 @@
 				5B121F422A0D1AFC00D17637 /* ArtistCellView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5B121F442A0D47D900D17637 /* AlbumModel */ = {
+			isa = PBXGroup;
+			children = (
+				5B121F452A0D47F900D17637 /* AlbumModel.swift */,
+			);
+			path = AlbumModel;
+			sourceTree = "<group>";
+		};
+		5B121F472A0D569800D17637 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B121F482A0D56A800D17637 /* AlbumView.swift */,
+				5B121F512A0E2F7200D17637 /* AlbumCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5B121F4A2A0D720B00D17637 /* ArtistInfo */ = {
+			isa = PBXGroup;
+			children = (
+				5B121F4B2A0D722500D17637 /* View */,
+			);
+			path = ArtistInfo;
+			sourceTree = "<group>";
+		};
+		5B121F4B2A0D722500D17637 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B121F4D2A0D724300D17637 /* ArtistInfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5B4465F32A0ED91F002B7D5D /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				5B4465F42A0ED92F002B7D5D /* MusicModel.swift */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 		5B5F653D2A09A304000693FD = {
@@ -277,14 +332,19 @@
 				5B121F312A0BA22F00D17637 /* DownloaderClient.swift in Sources */,
 				5B121F2C2A0B873800D17637 /* GenreView.swift in Sources */,
 				5B121F262A0A55D800D17637 /* MusicCategoryViewModel.swift in Sources */,
+				5B121F492A0D56A800D17637 /* AlbumView.swift in Sources */,
 				5B5F65532A09A307000693FD /* Persistence.swift in Sources */,
+				5B121F522A0E2F7200D17637 /* AlbumCellView.swift in Sources */,
 				5B121F332A0BDF7D00D17637 /* GenreCellView.swift in Sources */,
 				5B5F654C2A09A304000693FD /* ContentView.swift in Sources */,
 				5B121F412A0D02EF00D17637 /* ArtistList.swift in Sources */,
+				5B121F462A0D47F900D17637 /* AlbumModel.swift in Sources */,
 				5B5F65562A09A307000693FD /* DeezerApp.xcdatamodeld in Sources */,
+				5B4465F52A0ED92F002B7D5D /* MusicModel.swift in Sources */,
 				5B5F654A2A09A304000693FD /* DeezerAppApp.swift in Sources */,
 				5B121F3E2A0C590E00D17637 /* ArtistModel.swift in Sources */,
 				5B121F282A0A561A00D17637 /* DeezerApi.swift in Sources */,
+				5B121F4E2A0D724300D17637 /* ArtistInfoView.swift in Sources */,
 				5B121F242A0A4AC900D17637 /* MusicCategoryModel.swift in Sources */,
 				5B121F432A0D1AFC00D17637 /* ArtistCellView.swift in Sources */,
 			);
