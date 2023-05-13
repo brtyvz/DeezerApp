@@ -14,15 +14,15 @@ struct AlbumCellView: View {
         
            
                 HStack(){
-                AnimatedImage(url: URL(string: album.albumImage)).resizable().frame(width: 80, height: 80).cornerRadius(10).opacity(0.9)
+                AnimatedImage(url: URL(string: album.albumImage)).resizable().frame(width: 100, height: 100).cornerRadius(10).opacity(0.9)
                     Text(album.albumName).bold()
                     Text(album.release_date).bold()
                     
                 }.foregroundColor(Color.white)
-                    .padding(.leading,10)
+                    .padding(.leading,0)
                     .frame(width: 400, height: 100, alignment: .leading)
                     .background(Color.black.opacity(0.5))
-                        .cornerRadius(20)
+                        .cornerRadius(10)
             }
 
         

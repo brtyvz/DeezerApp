@@ -12,13 +12,14 @@ class MusicModel: Codable {
     var musicName: String
     var musicImageUrl: String
     var preview:String
-
+    var duration:Int
     
     private enum CodingKeys: String, CodingKey {
          case musicId = "id"
          case musicName = "title"
          case musicImageUrl = "md5_image"
          case preview = "preview"
+         case duration = "duration"
      }
 }
 

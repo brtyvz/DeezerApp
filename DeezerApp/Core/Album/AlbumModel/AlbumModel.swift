@@ -14,6 +14,7 @@ class AlbumModel: Codable {
     var albumName:String
     var albumImage:String
     var trackList:String
+   
     
     private enum CodingKeys: String, CodingKey {
         
@@ -23,6 +24,7 @@ class AlbumModel: Codable {
          case albumName = "title"
          case albumImage = "cover_xl"
          case trackList = "tracklist"
+         
      }
 }
 
