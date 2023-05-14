@@ -12,6 +12,7 @@ import AVKit
 struct AlbumView: View {
     let album:AlbumModel
     
+    
     @ObservedObject var vm = MusicCategoryViewModel()
     
     var body: some View {

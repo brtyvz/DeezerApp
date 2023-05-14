@@ -21,7 +21,7 @@ struct AlbumCellView: View {
                 }.foregroundColor(Color.white)
                     .padding(.leading,0)
                     .frame(width: 400, height: 100, alignment: .leading)
-                    .background(Color.black.opacity(0.5))
+                    .background(Color.black.opacity(0.9))
                         .cornerRadius(10)
             }
 

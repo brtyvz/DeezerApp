@@ -13,7 +13,7 @@ struct GenreView: View {
     private let gridItem = [GridItem(.flexible()),GridItem(.flexible())]
     
     var body: some View {
-        NavigationView {
+       
             ScrollView {
                 LazyVGrid(columns:gridItem ,spacing: 22 ){
                     ForEach(vm.genres,id:\.genreId) { genre in
@@ -30,8 +30,8 @@ struct GenreView: View {
                 vm.fetchGenre()
               
             }
-            .navigationTitle("Genres")
-        }
+            .navigationTitle("Deezer")
+        
     }
 }
 

@@ -13,7 +13,7 @@ struct DeezerAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            GenreView()
+            MainTabView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
