@@ -10,7 +10,7 @@ import SDWebImageSwiftUI
 
 struct ArtistCellView: View {
     let artist:ArtistModel
-    var viewModel = MusicCategoryViewModel()
+    var viewModel = AppViewModel()
     var body: some View {
         ZStack{
             

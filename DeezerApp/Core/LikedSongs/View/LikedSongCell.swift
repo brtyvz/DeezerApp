@@ -15,7 +15,7 @@ struct LikedSongCell: View {
     @State private var player: AVPlayer?
     @State private var isPlaying = false
     @State var isLiked = true
-    @ObservedObject var vm = MusicCategoryViewModel()
+    @ObservedObject var vm = AppViewModel()
     
     @Environment(\.managedObjectContext) private var viewContext
  

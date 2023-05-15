@@ -15,7 +15,7 @@ class ArtistModel: Codable {
     private enum CodingKeys: String, CodingKey {
          case artistId = "id"
          case artistName = "name"
-         case artistImageUrl = "picture"
+         case artistImageUrl = "picture_xl"
      }
 }
 

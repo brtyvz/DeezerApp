@@ -10,7 +10,7 @@ import SDWebImageSwiftUI
 
 struct GenreCellView: View {
     let genre:MusicGenreModel
-    var viewModel = MusicCategoryViewModel()
+    var viewModel = AppViewModel()
     var body: some View {
         ZStack{
             

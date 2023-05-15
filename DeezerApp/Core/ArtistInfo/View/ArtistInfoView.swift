@@ -11,13 +11,13 @@ struct ArtistInfoView: View {
     
     var artist: ArtistModel
     
-    @ObservedObject var vm = MusicCategoryViewModel()
+    @ObservedObject var vm = AppViewModel()
     
     
     var body: some View {
         ScrollView{
             Text(artist.artistName).font(.title).bold()
-            AnimatedImage(url: URL(string: artist.artistImageUrl)).resizable().frame(width: 400, height: 250).cornerRadius(10).opacity(0.9)
+            AnimatedImage(url: URL(string: artist.artistImageUrl)).resizable().frame(width: 400, height: 400).cornerRadius(10).opacity(0.9)
             
             ForEach(vm.albums,id:\.albumId) { album in
                 NavigationLink {

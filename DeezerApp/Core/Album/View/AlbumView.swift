@@ -11,9 +11,11 @@ import AVKit
 
 struct AlbumView: View {
     let album:AlbumModel
+   
     
+    @ObservedObject var vm = AppViewModel()
     
-    @ObservedObject var vm = MusicCategoryViewModel()
+  
     
     var body: some View {
         ScrollView {
@@ -22,12 +24,10 @@ struct AlbumView: View {
                 Text(album.albumName).font(.title).bold()
                 
                 ForEach(vm.musics,id:\.musicId) { music in
-                 
-                   MusicCellView(music: music,album: album)
+                    MusicCellView(music: music,album: album)
                 }
             } .onAppear{
                 vm.fetchMusicInfo(id: album.albumId)
-                
         }
         }
        
