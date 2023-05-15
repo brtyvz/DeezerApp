@@ -16,10 +16,15 @@ struct MusicCellView: View {
     @State private var player: AVPlayer?
     @State private var isPlaying = false
     @State var isLiked = false
-    @ObservedObject var vm = MusicCategoryViewModel()
+    @ObservedObject var vm = AppViewModel()
     
     @Environment(\.managedObjectContext) private var viewContext
     
+
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        animation: .default)
+     var items: FetchedResults<Item>
     
 
     let album:AlbumModel
@@ -40,15 +45,27 @@ struct MusicCellView: View {
                 }
                 Spacer()
                 ZStack {
-                    Button {
-                        isHeartSelected.toggle()
-                        self.isLiked = true
-                        saveData(isLiked: self.isLiked, duration: music.duration, songName: music.musicName, songImage: album.albumImage,preview: music.preview)
+                    ForEach(items) { item in
+                        if item.musicID == music.musicId{
+                            Button {
+                            deleteItem(item)
+                                isHeartSelected.toggle()
+                                self.isLiked = true
+                                
+                            } label: {
+                                Image(systemName: isHeartSelected ? "heart" : "heart.fill").font(.title).foregroundColor(Color.green)
+                                    
+                            }.padding(.trailing,15)
+                        }
                         
-                    } label: {
-                        Image(systemName: isHeartSelected ? "heart.fill" : "heart").font(.title).foregroundColor(Color.green)
-                            
-                    }.padding(.trailing,15)
+                        else {
+                           heartButtonView()
+                        }
+                      
+                    }
+                    
+                   heartButtonView()
+                  
                 }
                  
             
@@ -61,7 +78,20 @@ struct MusicCellView: View {
         
     }
     
-    func saveData(isLiked:Bool,duration:Int,songName:String,songImage:String,preview:String){
+    private func deleteItem(_ item: Item) {
+            withAnimation {
+                viewContext.delete(item)
+
+                do {
+                    try viewContext.save()
+                } catch {
+                    let nsError = error as NSError
+                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                }
+            }
+    }
+    
+    func saveData(isLiked:Bool,duration:Int,songName:String,songImage:String,preview:String,musicID:Int){
 
             let entity = Item(context: viewContext)
             entity.timestamp = Date()
@@ -70,6 +100,7 @@ struct MusicCellView: View {
             entity.songName = music.musicName
             entity.songImage = album.albumImage
             entity.isLiked = isLiked
+            entity.musicID = Int32(music.musicId)
 
         do {
             try viewContext.save()
@@ -97,9 +128,19 @@ struct MusicCellView: View {
         let seconds = seconds % 60
         return String(format: "%d:%02d", minutes, seconds)
     }
-    
-  
-
 }
 
 
+extension MusicCellView{
+    func heartButtonView() -> some View{
+        Button {
+            isHeartSelected.toggle()
+            self.isLiked = true
+            saveData(isLiked: self.isLiked, duration: music.duration, songName: music.musicName, songImage: album.albumImage,preview: music.preview,musicID: music.musicId)
+            
+        } label: {
+            Image(systemName: isHeartSelected ? "heart.fill" : "heart").font(.title).foregroundColor(Color.green)
+                
+        }.padding(.trailing,15)
+    }
+}

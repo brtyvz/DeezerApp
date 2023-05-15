@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ArtistList: View {
-    @ObservedObject var vm = MusicCategoryViewModel()
+    @ObservedObject var vm = AppViewModel()
     private let gridItem = [GridItem(.flexible()),GridItem(.flexible())]
     var id : Int
     

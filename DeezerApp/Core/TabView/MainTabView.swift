@@ -30,7 +30,8 @@ struct MainTabView: View {
                     }.tag(1)
                 
             }
-        }
+           
+        } 
       
     }
 }

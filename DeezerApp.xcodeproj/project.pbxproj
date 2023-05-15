@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B121F242A0A4AC900D17637 /* MusicCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B121F232A0A4AC900D17637 /* MusicCategoryModel.swift */; };
-		5B121F262A0A55D800D17637 /* MusicCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B121F252A0A55D800D17637 /* MusicCategoryViewModel.swift */; };
+		5B121F262A0A55D800D17637 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B121F252A0A55D800D17637 /* AppViewModel.swift */; };
 		5B121F282A0A561A00D17637 /* DeezerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B121F272A0A561A00D17637 /* DeezerApi.swift */; };
 		5B121F2C2A0B873800D17637 /* GenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B121F2B2A0B873800D17637 /* GenreView.swift */; };
 		5B121F312A0BA22F00D17637 /* DownloaderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B121F302A0BA22F00D17637 /* DownloaderClient.swift */; };
@@ -26,7 +26,6 @@
 		5B4465FC2A0FCCD4002B7D5D /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4465FB2A0FCCD4002B7D5D /* MainTabView.swift */; };
 		5B4466002A0FCF3C002B7D5D /* LikedSongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4465FF2A0FCF3C002B7D5D /* LikedSongsView.swift */; };
 		5B5F654A2A09A304000693FD /* DeezerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5F65492A09A304000693FD /* DeezerAppApp.swift */; };
-		5B5F654C2A09A304000693FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5F654B2A09A304000693FD /* ContentView.swift */; };
 		5B5F654E2A09A307000693FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5F654D2A09A307000693FD /* Assets.xcassets */; };
 		5B5F65512A09A307000693FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5F65502A09A307000693FD /* Preview Assets.xcassets */; };
 		5B5F65532A09A307000693FD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5F65522A09A307000693FD /* Persistence.swift */; };
@@ -36,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		5B121F232A0A4AC900D17637 /* MusicCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCategoryModel.swift; sourceTree = "<group>"; };
-		5B121F252A0A55D800D17637 /* MusicCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCategoryViewModel.swift; sourceTree = "<group>"; };
+		5B121F252A0A55D800D17637 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		5B121F272A0A561A00D17637 /* DeezerApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeezerApi.swift; sourceTree = "<group>"; };
 		5B121F2B2A0B873800D17637 /* GenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreView.swift; sourceTree = "<group>"; };
 		5B121F302A0BA22F00D17637 /* DownloaderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderClient.swift; sourceTree = "<group>"; };
@@ -54,7 +53,6 @@
 		5B4465FF2A0FCF3C002B7D5D /* LikedSongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedSongsView.swift; sourceTree = "<group>"; };
 		5B5F65462A09A304000693FD /* DeezerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeezerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5F65492A09A304000693FD /* DeezerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeezerAppApp.swift; sourceTree = "<group>"; };
-		5B5F654B2A09A304000693FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5B5F654D2A09A307000693FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B5F65502A09A307000693FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B5F65522A09A307000693FD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -77,6 +75,7 @@
 		5B121F1E2A0A464D00D17637 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5B121F382A0C514F00D17637 /* ViewModel */,
 				5B4465FD2A0FCEC5002B7D5D /* LikedSongs */,
 				5B4465FA2A0FCCBB002B7D5D /* TabView */,
 				5B121F4A2A0D720B00D17637 /* ArtistInfo */,
@@ -84,7 +83,7 @@
 				5B121F2D2A0B9DC200D17637 /* Service */,
 				5B121F222A0A467C00D17637 /* Favs */,
 				5B121F212A0A466F00D17637 /* Album */,
-				5B121F202A0A466500D17637 /* ArtistList */,
+				5B121F202A0A466500D17637 /* Artists */,
 				5B121F1F2A0A465300D17637 /* Genres */,
 			);
 			path = Core;
@@ -94,19 +93,18 @@
 			isa = PBXGroup;
 			children = (
 				5B121F3A2A0C537000D17637 /* View */,
-				5B121F382A0C514F00D17637 /* ViewModel */,
 				5B121F372A0C513700D17637 /* Model */,
 			);
 			path = Genres;
 			sourceTree = "<group>";
 		};
-		5B121F202A0A466500D17637 /* ArtistList */ = {
+		5B121F202A0A466500D17637 /* Artists */ = {
 			isa = PBXGroup;
 			children = (
 				5B121F3F2A0CF01300D17637 /* View */,
 				5B121F3C2A0C58E900D17637 /* Model */,
 			);
-			path = ArtistList;
+			path = Artists;
 			sourceTree = "<group>";
 		};
 		5B121F212A0A466F00D17637 /* Album */ = {
@@ -145,7 +143,7 @@
 		5B121F382A0C514F00D17637 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5B121F252A0A55D800D17637 /* MusicCategoryViewModel.swift */,
+				5B121F252A0A55D800D17637 /* AppViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -288,7 +286,6 @@
 			children = (
 				5B121F1E2A0A464D00D17637 /* Core */,
 				5B5F65492A09A304000693FD /* DeezerAppApp.swift */,
-				5B5F654B2A09A304000693FD /* ContentView.swift */,
 				5B5F654D2A09A307000693FD /* Assets.xcassets */,
 				5B5F65522A09A307000693FD /* Persistence.swift */,
 				5B5F65542A09A307000693FD /* DeezerApp.xcdatamodeld */,
@@ -383,14 +380,13 @@
 			files = (
 				5B121F312A0BA22F00D17637 /* DownloaderClient.swift in Sources */,
 				5B121F2C2A0B873800D17637 /* GenreView.swift in Sources */,
-				5B121F262A0A55D800D17637 /* MusicCategoryViewModel.swift in Sources */,
+				5B121F262A0A55D800D17637 /* AppViewModel.swift in Sources */,
 				5B121F492A0D56A800D17637 /* AlbumView.swift in Sources */,
 				5B4465F92A0F8184002B7D5D /* MusicCellView.swift in Sources */,
 				5B5F65532A09A307000693FD /* Persistence.swift in Sources */,
 				5B121F522A0E2F7200D17637 /* AlbumCellView.swift in Sources */,
 				5B121F332A0BDF7D00D17637 /* GenreCellView.swift in Sources */,
 				5BDBABE12A10C22100846C8A /* LikedSongCell.swift in Sources */,
-				5B5F654C2A09A304000693FD /* ContentView.swift in Sources */,
 				5B121F412A0D02EF00D17637 /* ArtistList.swift in Sources */,
 				5B121F462A0D47F900D17637 /* AlbumModel.swift in Sources */,
 				5B4466002A0FCF3C002B7D5D /* LikedSongsView.swift in Sources */,

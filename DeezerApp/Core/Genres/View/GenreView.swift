@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GenreView: View {
     
-    @ObservedObject var vm = MusicCategoryViewModel()
+    @ObservedObject var vm = AppViewModel()
     private let gridItem = [GridItem(.flexible()),GridItem(.flexible())]
     
     var body: some View {
